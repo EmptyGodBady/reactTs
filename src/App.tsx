@@ -1,24 +1,15 @@
 import React from "react";
-import logo from "./logo.svg";
+import "./App.css";
+import { InputTask } from "./components/listItem";
+import { useState } from "react";
 import "./App.css";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p className="bg-orange-500">
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="bg-[#2B333B] h-[100vh] flex items-center justify-center">
+      <div className="w-[528px] min-h-[400px] flex flex-col ">
+        <InputTask inputClass="myInputClass" />
+      </div>
     </div>
   );
 }
