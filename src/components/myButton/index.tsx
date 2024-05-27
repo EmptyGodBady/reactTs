@@ -1,7 +1,12 @@
-export const MyButton = ()=>{
+import { Children, PropsWithChildren, ReactNode } from "react";
 
+type Props={
+  onClick: ()=>void;
+  children?: ReactNode;
+  buttonWidth: number;
+}
+export const MyButton = ({onClick,buttonWidth,children}:Props)=>{
   return(
-    <button value="Submit" type="submit" className="ml-[24px] border rounded-lg w-[104px] h-[40px]
-    "></button>
+    <button type="submit" className={`ml-[24px] border rounded-lg w-[${buttonWidth}px] h-[40px]`} onClick={onClick}>{children}</button>
   )
 }

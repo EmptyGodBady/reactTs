@@ -1,48 +1,35 @@
-// import React, { ChangeEvent, FormEvent } from "react";
+import React, { ChangeEvent, FormEvent } from "react";
 import "./App.css";
 import { InputTask } from "./components/listItem";
-// import { useState } from "react";
+import { useState } from "react";
 import "./App.css";
 import { MyButton } from "./components/myButton";
-import React, { useState, FormEvent, ChangeEvent } from 'react';
 
 
 function App() {
   const [tasks, setTasks] = useState<string[]>([]);
-  const [value, setValue] = useState<string>('');
 
-  const handleSubmit = (event: any) => {
-    event.preventDefault();
-    setTasks([...tasks, value]);
-    setValue('');
-  };
-    const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
-      setValue(event.target.value);
-    };
   return (
     <>
-    {/* <form onSubmit={handleSubmit}>
-        <input
-          type="text"
-          value={value}
-          // onChange={handleChange}
-        />
-        <button type="submit">Добавить Input</button>
-      </form> */}
-      <div>
-        {tasks.map((input, index) => (
-          <input key={index} type="text" value={input} readOnly />
-        ))}
+      <div className="bg-[#2B333B] h-[100vh] flex items-center justify-center">
+        <div className="w-[528px] min-h-[400px] flex flex-col gap-6">
+          <div>
+          <InputTask inputClass="myInputClass"/>
+          <MyButton buttonWidth={104} onClick={()=>{
+            setTasks((prev)=>[...prev, "my task"])
+          }}/>
+          </div>
+          <div>
+            {tasks.map((input, index) => (
+              <div>
+                <input className="mb-8 w-[400px] h-[40px] pl-2 bg-[#3A444F] border border-white rounded-lg " key={index} type="text" value={input} readOnly />
+                <MyButton buttonWidth={40} onClick={()=>{}}>Done</MyButton>
+                <MyButton buttonWidth={40} onClick={()=>{}}>Del</MyButton>
+              </div>
+              ))}
+          </div>
+        </div>
       </div>
-    <div className="bg-[#2B333B] h-[100vh] flex items-center justify-center">
-      <div className="w-[528px] min-h-[400px] flex ">
-        <InputTask inputClass="myInputClass" 
-          />
-        <MyButton onSubmit={handleSubmit}/>
-      </div>
-    </div>
-    <div>
-    </div>
     </>
   );
 }
