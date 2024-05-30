@@ -5,7 +5,12 @@ interface InputTaskProps {
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
-export const InputTask: React.FC<InputTaskProps> = ({ inputClass, value, onChange, status}) => {
+export const InputTask: React.FC<InputTaskProps> = ({
+  inputClass,
+  value,
+  onChange,
+  status,
+}) => {
   return (
     <input
       type="text"
