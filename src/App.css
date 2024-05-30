@@ -1,5 +1,3 @@
-  .myInputClass{
-    @apply bg-[#3A444F] border border-white rounded-lg  
-  }
-
-
+.myInputClass {
+  @apply bg-[#3A444F] border border-white rounded-lg;
+}

@@ -3,9 +3,16 @@ interface InputTaskProps {
   value: string;
   status?: string;
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  onKeyDown: (e: React.KeyboardEvent<HTMLInputElement>)=>  void;
 }
 
-export const InputTask: React.FC<InputTaskProps> = ({ inputClass, value, onChange, status}) => {
+export const InputTask: React.FC<InputTaskProps> = ({
+  inputClass,
+  value,
+  onChange,
+  onKeyDown,
+  status,
+}) => {
   return (
     <input
       type="text"
@@ -14,6 +21,7 @@ export const InputTask: React.FC<InputTaskProps> = ({ inputClass, value, onChang
       placeholder="New Task"
       value={value}
       onChange={onChange}
+      onKeyDown={onKeyDown}
     />
   );
 };
